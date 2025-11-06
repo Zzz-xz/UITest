@@ -1,0 +1,27 @@
+[project]
+name = "uitest"
+version = "0.1.0"
+description = "SSH 客户端应用"
+readme = "README.md"
+# paramiko 4.0.0 要求 Python >=3.9，所以这里更新版本限制
+requires-python = ">=3.9"
+
+# 依赖项（数组形式，正确格式）
+dependencies = [
+    "pyside6>=6.6.0", # 该版本需要 Python 3.9+
+    "paramiko>=4.0.0",
+]
+
+[tool.uv]
+# 移除错误的 [tool.uv.python]，UV 会自动使用当前环境的 Python 版本
+# 若需指定版本，可在命令行通过 --python 3.9 控制，无需在此配置
+
+[tool.pyinstaller]
+name = "ssh_client"
+console = false  # GUI 应用关闭控制台
+hidden-imports = ["paramiko", "PySide6.QtCore", "PySide6.QtWidgets"]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.16.0",
+]
