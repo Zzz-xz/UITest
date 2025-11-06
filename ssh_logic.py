@@ -36,7 +36,7 @@ class SSHLogic(QObject):
         except Exception as e:
             self._ssh_connection = None  # 连接失败时清空实例
             # 所有异常分支都发送未连接状态
-            self.connectionStatus.emit("disconnected")  # 新增：发送未连接状态
+            self.connectionStatus.emit("disconnected")
             if isinstance(e, paramiko.AuthenticationException):
                 self.show_error("认证失败", "用户名或密码错误!")
             elif isinstance(e, paramiko.SSHException):
@@ -52,7 +52,7 @@ class SSHLogic(QObject):
                 self._ssh_connection.close()  # 关闭SSH连接
                 self._ssh_connection = None  # 清空连接实例
                 self.show_info("断开成功", "已断开与SSH主机的连接")
-                self.connectionStatus.emit("disconnected")  # 更新状态
+                self.connectionStatus.emit("disconnected")
             except Exception as e:
                 self.show_error("断开失败", f"断开连接时出错: {e}")
         else:

@@ -34,7 +34,6 @@ ApplicationWindow {
         font.pixelSize: 12
         padding: 4
     }
-    // 连接状态和断开按钮容器（垂直排列）
     Column {
         id: statusContainer
         anchors.top: parent.top
