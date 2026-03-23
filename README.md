@@ -26,7 +26,7 @@
 
 ## 🎥 演示视频
 
-<video src="https://github.com/user-attachments/assets/31ec0f2f-c250-48d3-b977-50306961d825" width="50%" height="50%" controls></video>
+<video src="https://github.com/user-attachments/assets/31ec0f2f-c250-48d3-b977-50306961d825" width="50%" height="50%" controls autoplay></video>
 
 ## 🚀 快速开始
 
